@@ -1,4 +1,4 @@
-TEXTGENDEP=Body.o main.o Template.o KeyList.o
+TEXTGENDEP=Body.o main.o Template.o KeyList.o stringUtils.o
 TEXTGEN=textGenerator
 OFLAGS= -c -I. -std=c++14
 CC=g++

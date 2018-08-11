@@ -9,13 +9,14 @@ private:
 	std::string fileName;
 	std::map<std::string,std::string> mappedWords;
 
-	void parseMappedWords();
+	std::string parseMappedWords(std::string input);
+	void 		generateMappedWords();
 
 public:
-	KeyList(string _fileName);
+	KeyList(std::string _fileName);
 
 	std::string getFileName();
-	std::string getKeyPhrase(const string &);
+	std::string getKeyPhrase(const std::string &);
 
 
 };

@@ -1,10 +1,17 @@
 #include "KeyList.H"
+#include "stringUtils.H"
 
-#include<ifstream>
+#include<fstream>
+#include <iostream>
 
 using namespace std;
 
-void parseMappedWords(){
+string parseMappedWords(string input){
+	return "";
+	//TODO: Write function for parseMappedWords
+}
+
+void KeyList::generateMappedWords(){
 	ifstream inputFile(fileName);
 
 	if (!inputFile.is_open()){	
@@ -13,15 +20,16 @@ void parseMappedWords(){
 
 	string line;
 	while (getline(inputFile,line)){
-
+		vector<string> splitKeyPhrases = stringSplit(line,"->"); 
 	}
 
+	//TODO: Finish writing logic to parse key phrase and add to map
 
 }
 
 KeyList::KeyList(string _fileName): fileName(_fileName){
 	try{
-		parseMappedWords();
+		generateMappedWords();
 	}
 	catch(string & e){
 		cout << "Error: " + e << endl;
