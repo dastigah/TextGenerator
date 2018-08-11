@@ -18,6 +18,5 @@ public:
 	std::string getFileName();
 	std::string getKeyPhrase(const std::string &);
 
-
 };
 #endif
