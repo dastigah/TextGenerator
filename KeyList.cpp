@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string parseMappedWords(string input){
+string KeyList::parseMappedWords(string input){
 	return "";
 	//TODO: Write function for parseMappedWords
 }
@@ -21,8 +21,10 @@ void KeyList::generateMappedWords(){
 	string line;
 	while (getline(inputFile,line)){
 		vector<string> splitKeyPhrases = stringSplit(line,"->"); 
+		mappedWords[parseMappedWords(splitKeyPhrases[0])] = mappedWords[parseMappedWords(splitKeyPhrases[1])];	
 	}
-
+	
+	inputFile.close();
 	//TODO: Finish writing logic to parse key phrase and add to map
 
 }

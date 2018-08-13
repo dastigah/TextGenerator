@@ -1,6 +1,6 @@
 TEXTGENDEP=Body.o main.o Template.o KeyList.o stringUtils.o
 TEXTGEN=textGenerator
-OFLAGS= -c -I. -std=c++14
+OFLAGS= -g -c -I. -std=c++14
 CC=g++
 
 $(TEXTGEN): $(TEXTGENDEP) 
