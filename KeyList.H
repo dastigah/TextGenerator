@@ -9,7 +9,6 @@ private:
 	std::string fileName;
 	std::map<std::string,std::string> mappedWords;
 
-	std::string parseMappedWords(std::string input);
 	void 		generateMappedWords();
 
 public:
