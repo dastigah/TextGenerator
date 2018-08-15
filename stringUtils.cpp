@@ -8,7 +8,7 @@ vector<string> stringSplit(const string & input ,const string & delimiter){
 	vector<string> splitWords;
 	
 	while (begin != string::npos){ // While not at the end of the string
-		foundIndex = input.find(delimiter);
+		foundIndex = input.find(delimiter,begin);
 		splitWords.push_back(string(begin,foundIndex));
 		begin = (foundIndex == string::npos) ? (string::npos) : foundIndex + delimiter.length(); //if not end of string move pointer pass the delimiter
 	}
