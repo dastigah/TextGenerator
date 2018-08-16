@@ -1,7 +1,7 @@
 CXX = g++
 INCLUDES = -I./
 CXXFLAGS = -g $(INCLUDES)
-TARGET = Main_t.o TemplateTest.o
+TARGET = Main_t.o TemplateTest.o BodyTest.o KeyListTest.o
 LINKFLAGS = -lcppunit
 
 test : $(TARGET)
