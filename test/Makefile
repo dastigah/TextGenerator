@@ -1,17 +1,17 @@
-CXX = g++
-INCLUDES = -I./ ../
-CXXFLAGS = -g $(INCLUDES)
-TARGET = Main_t.o TemplateTest.o BodyTest.o KeyListTest.o
+include $(MK_INC)
+
+TESTDEP = Main_t.o TemplateTest.o BodyTest.o KeyListTest.o
+TESTEXE = test
 LINKFLAGS = -lcppunit
 
-test : $(TARGET)
-	$(CXX) -o $@ $^ $(LINKFLAGS) 
+$(TESTEXE) : $(TESTDEP)
+	$(CC) $^ $(LINKFLAGS) -o $@ 
 
 %.o : %.cpp %.H
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
 	
 %.o : %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
 
 clean:
-	rm -rf $(TARGET) test
+	rm -rf $(TESTDEP) $(TESTEXE)
