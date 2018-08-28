@@ -16,6 +16,7 @@ public:
 
 	std::string getFileName();
 	std::string getKeyPhrase(const std::string &);
+	const std::map<std::string,std::string>& getMap(void);
 
 };
 #endif
