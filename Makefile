@@ -1,6 +1,6 @@
-BIN_DIR=$(PWD)/bin
-OBJ_DIR=$(PWD)/obj
-INC_DIR=$(PWD)/include
+BIN_DIR=$(PWD)/bin/
+OBJ_DIR=$(PWD)/obj/
+INC_DIR=$(PWD)/include/
 
 MK_INC=$(PWD)/Makefile.include
 
@@ -23,4 +23,4 @@ test:
 
 clean: 
 	#for each element in MK_DIRS place into DIR and run command at end
-	$(foreach DIR, $(MKFILE_DIRS), $(MAKE) -C $(DIR) clean;)	
+	$(foreach DIR, $(MKFILE_DIRS), $(MAKE) $(PARTS_DIRS) -C $(DIR) clean;)	
