@@ -16,10 +16,10 @@ all: textGenerator test
 fresh: clean all
 
 textGenerator:
-	$(MAKE) $(PARTS_DIRS) -C src $@ 
+	$(MAKE) $(PARTS_DIRS) -C src $(BIN_DIR)$@ 
 
 test:
-	$(MAKE) $(PARTS_DIRS) -C test $@
+	$(MAKE) $(PARTS_DIRS) -C test $(BIN_DIR)$@
 
 clean: 
 	#for each element in MK_DIRS place into DIR and run command at end

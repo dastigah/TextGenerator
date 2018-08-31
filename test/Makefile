@@ -1,16 +1,16 @@
 include $(MK_INC)
 
-TESTDEP = Main_t.o TemplateTest.o BodyTest.o KeyListTest.o
-TESTEXE = test
+TESTDEP = $(addprefix $(OBJ_DIR), Main_t.o TemplateTest.o BodyTest.o KeyListTest.o)
+TESTEXE = $(addprefix $(BIN_DIR),test)
 LINKFLAGS = -lcppunit
 
 $(TESTEXE) : $(TESTDEP)
-	$(CC) $^ $(LINKFLAGS) -o $@ 
+	$(CC) $^ $(LINKFLAGS) -o $(BIN_DIR)$@ 
 
-%.o : %.cpp %.H
+$(OBJ_DIR)%.o : %.cpp %.H
 	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
 	
-%.o : %.cpp
+$(OBJ_DIR)%.o : %.cpp
 	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
 
 clean:

@@ -3,10 +3,10 @@
 include $(MK_INC)
 
 TEXTGENDEP=$(addprefix $(OBJ_DIR), Body.o main.o Template.o KeyList.o stringUtils.o)
-TEXTGEN=textGenerator
+TEXTGEN=$(addprefix $(BIN_DIR),textGenerator)
 
 $(TEXTGEN): $(TEXTGENDEP) 
-	$(CC) $^ -o $(BIN_DIR)$@
+	$(CC) $^ -o $@
 
 $(OBJ_DIR)%.o: %.cpp $(INC_DIR)%.H
 	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
@@ -15,5 +15,5 @@ $(OBJ_DIR)%.o: %.cpp
 	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
 
 clean:
-	rm -rf $(TEXTGENDEP) $(BIN_DIR)$(TEXTGEN)
+	rm -rf $(TEXTGENDEP) $(TEXTGEN)
 
