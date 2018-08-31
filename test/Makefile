@@ -5,7 +5,7 @@ TESTEXE = $(addprefix $(BIN_DIR),test)
 LINKFLAGS = -lcppunit
 
 $(TESTEXE) : $(TESTDEP)
-	$(CC) $^ $(LINKFLAGS) -o $(BIN_DIR)$@ 
+	$(CC) $^ $(LINKFLAGS) -o $@ 
 
 $(OBJ_DIR)%.o : %.cpp %.H
 	$(CC) $(OFLAGS) -I $(INC_DIR) $< -o $@
