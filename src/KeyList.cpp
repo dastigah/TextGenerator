@@ -36,3 +36,8 @@ string KeyList::getFileName() {return fileName;}
 string KeyList::getKeyPhrase(const string & input){
 	return mappedWords[input];
 }
+
+
+const map<string, string>& KeyList::getMap(void){
+	return mappedWords; 
+}
